@@ -126,13 +126,13 @@ function findPairs() {
   const lettersToPair = ['e', 'k', 's', 'a', 'e', 's', 'a', 'n', 'k', 'n'];
   const pairsArray = [];
 
-  // lettersToPair.forEach((id, i) => {
-  //   for(let j = i+1; j<workplaceAccidents.length; j++){
-  //     if(id === lettersToPair[j]){
-  //       pairsArray.push([[i], [j]])
-  //     }
-  //   }
-  // })
+for(let i=0; i < lettersToPair.length; i++){
+  for(let j= i+1; j< lettersToPair.length; j++){
+    if(lettersToPair[i]===lettersToPair[j]){
+      pairsArray.push([i,j])
+    }
+  }
+}
 
 
   return pairsArray;
@@ -163,13 +163,14 @@ function getHelensInfo() {
 
 // Return Helen's email using destructuring.
 function getHelensEmail() {
-  // Replace this with your code
+  const {email} = contactInfo
+  return email
 }
 
 // Use destructuring to save the zip code and state
 // from shippingInfo to new variables and return [zipCode, state]
 function getZipAndState() {
-  // Replace this with your code
+  // const {zipCode, state}
 }
 
 // Helen has a daughter named Ellen that lives at the same address.

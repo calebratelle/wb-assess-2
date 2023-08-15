@@ -94,9 +94,14 @@ const products = [
 // Using the map method, make a copy of your products array with the prices reduced by 25%
 // and return it.
 function getSaleProducts() {
-  // Replace this with your code
-  // const copyProducts = products.map((price)=> price*.75)
-  // return copyProducts
+  
+  const copyProducts = products.map((product)=> {
+    let updatedProduct = {...product}
+    updatedProduct.price = product.price*.75
+    return updatedProduct
+  })
+
+  return copyProducts
 }
 
 // A customer has placed an order - they want one of every product that has blue on it.
@@ -109,7 +114,10 @@ function getBlueProducts() {
 
 // Get the total price of all the products using the reduce method.
 function getTotalPrice() {
-  // Replace this with your code
+  const total = products.reduce((acc, prod) => {
+    return acc + products.price
+  }, 0)
+  return total
 }
 
 export {
