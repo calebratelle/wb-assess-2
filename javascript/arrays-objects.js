@@ -126,6 +126,7 @@ function findPairs() {
   const pairsArray = [];
 
 for(let i=0; i < lettersToPair.length; i++){
+  
   for(let j= i+1; j< lettersToPair.length; j++){
     if(lettersToPair[i]===lettersToPair[j]){
       pairsArray.push([i,j])

@@ -116,15 +116,12 @@ function getBlueProducts() {
 
 
 // Get the total price of all the products using the reduce method.
-function getTotalPrice() {
-  let totalBluePrice = products.reduce(function(total, product) {
-    if (product.color.includes('blue')) {
-      return total + product.price;
-    }
-    return total;
-  }, 0);
+function getTotalPrice() { //declare function to get the total price of products
+  let total = products.reduce(function(acc, cur) { //use the .reduce method on the products array.  Establish a callback function to add up total values of price key from each object.  using two inputs, accumulator and current element.  
+return acc + cur.price
+  }, 0); //starting at 0 rather than the first element.
 
-  return totalBluePrice;
+  return total;
 }
 
 export {
