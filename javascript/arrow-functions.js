@@ -109,15 +109,22 @@ function getSaleProducts() {
 // to a new variable called 'blueProducts'.
 // (Hint: look up the array method 'includes' on MDN)
 function getBlueProducts() {
-  // Replace this with your code
+  let blueProducts = products.filter(product => product.color.includes('blue'));
+  return blueProducts
 }
+
+
 
 // Get the total price of all the products using the reduce method.
 function getTotalPrice() {
-  const total = products.reduce((acc, prod) => {
-    return acc + products.price
-  }, 0)
-  return total
+  let totalBluePrice = products.reduce(function(total, product) {
+    if (product.color.includes('blue')) {
+      return total + product.price;
+    }
+    return total;
+  }, 0);
+
+  return totalBluePrice;
 }
 
 export {

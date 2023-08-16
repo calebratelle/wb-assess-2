@@ -106,14 +106,13 @@ function betterCourses() {
     },
   ];
 
-  // for(let obj in courses){
-  //   for(let key in obj){
-  //     if(obj[key] === true){
-  //       obj[key] = false
-  //     }
-  //   }
-
-  // }
+  for (const course of courses) {
+    for (const key in course) {
+      if (typeof course[key] === 'boolean' && course[key] === true) {
+        course[key] = false;
+      }
+    }
+  }
 
   return courses;
 }
@@ -157,7 +156,7 @@ const shippingInfo = {
 // Using the Object.assign method, create a new object that combines the contactInfo and
 // shippingInfo objects and return it.
 function getHelensInfo() {
-  newObj = Object.assign(contactInfo, shippingInfo)
+  let newObj = Object.assign(contactInfo, shippingInfo)
   return newObj
 }
 
