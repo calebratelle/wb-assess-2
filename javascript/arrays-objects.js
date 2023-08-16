@@ -170,7 +170,9 @@ function getHelensEmail() {
 // Use destructuring to save the zip code and state
 // from shippingInfo to new variables and return [zipCode, state]
 function getZipAndState() {
-  // const {zipCode, state}
+  const { zipCode, state } = shippingInfo;
+  const result = [zipCode, state];
+  return result
 }
 
 // Helen has a daughter named Ellen that lives at the same address.
@@ -179,7 +181,11 @@ function getZipAndState() {
 // and the email address to 'ellen@email.com'.
 // Return the new object.
 function getEllensInfo() {
-  // Replace this with your code
+  const combinedInfo = {...contactInfo,...shippingInfo,};
+  
+  combinedInfo.name = 'Ellen';
+  combinedInfo.email = 'ellen@email.com';
+  return combinedInfo
 }
 
 // Use the userInfo object below to complete problems 9-11.
@@ -214,7 +220,7 @@ const userInfo = {
       upvotes: 100,
       responses: [
         {
-          userId: 1084,
+          userId: 1084,  
           response: 'Thanks for the info',
         },
         {
@@ -232,19 +238,22 @@ const userInfo = {
 
 // Return the value of alerts in gn@rly_c0der_007's settings using dot notation.
 function shouldAlert() {
-  // Replace this with your code
+  let value = userInfo.settings.alerts
+  return value
 }
 
 // Return the last item in gn@rly_c0der_007's topics array
 // using dot and/or bracket notation.
 function lastTopic() {
-  // Replace this with your code
+   let value = userInfo.topics[3] 
+   return value
 }
 
 // Return the userId of the first response to
 // gn@rly_c0der_007's 2nd comment using dot/bracket notation.
 function firstResponseId() {
-  // Replace this with your code
+  let value = userInfo.comments[1].responses[0].userId
+  return value
 }
 
 export {
